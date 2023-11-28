@@ -1,0 +1,27 @@
+{
+  "name": "ls-automation",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "test:stage": "npx playwright test --ui",
+    "test:single": "cross-env test_env=stage playwright test -g 'Fortrade Homepage'",
+    "test:single-production": "cross-env test_env=production playwright test -g 'Fortrade Homepage'",
+    "allure:generate": "npx allure generate ./allure-results --clean",
+    "allure:open": "npx allure open ./allure-report",
+    "allure:serve": "npx allure serve"
+  },
+  "dependencies": {
+    "allure-commandline": "^2.23.1",
+    "colorette": "^2.0.20",
+    "cross-env": "^7.0.3",
+    "dotenv": "^16.3.1",
+    "mongoose": "^7.3.1",
+    "playwright": "^1.39.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.39.0",
+    "allure-playwright": "^2.9.2"
+  }
+}
